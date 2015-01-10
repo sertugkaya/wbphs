@@ -1,15 +1,20 @@
 package models;
 
+import play.data.validation.Email;
+import play.data.validation.Password;
+import play.data.validation.Required;
 import play.db.jpa.Model;
 
 import javax.persistence.Entity;
 
-/**
- * Created by sertug on 18/12/14.
- */
+
 @Entity
 public class Vet extends Model {
+    @Required
+    @Email
     public String email;
+    @Required
+    @Password
     public String password;
 
     public Vet(String email, String password) {
